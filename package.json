@@ -18,6 +18,7 @@
     "lodash.mapvalues": "^4.4.0"
   },
   "devDependencies": {
-    "code": "^3.0.2"
+    "code": "^3.0.2",
+    "lab": "^10.9.0"
   }
 }
