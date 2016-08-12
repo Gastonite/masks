@@ -1,0 +1,23 @@
+{
+  "name": "masks",
+  "version": "1.0.2",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node --harmony_destructuring node_modules/.bin/lab -cCD test/index.js",
+    "test-watch": "fsmonitor -s -p '+*.js' npm test"
+  },
+  "author": "Clément Pasquier <clement@n00sphere.net>",
+  "license": "ISC",
+  "dependencies": {
+    "fsmonitor": "^0.2.4",
+    "hoek": "^4.0.1",
+    "joi": "^9.0.4",
+    "lodash.isempty": "^4.2.1",
+    "lodash.keyby": "^4.4.0",
+    "lodash.mapvalues": "^4.4.0"
+  },
+  "devDependencies": {
+    "code": "^3.0.2"
+  }
+}
