@@ -1,10 +1,10 @@
 {
   "name": "masks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node node_modules/.bin/lab -cCD test/index.js",
+    "test": "lab -vcCD test/index.js",
     "test-watch": "fsmonitor -s -p '+*.js' npm test"
   },
   "author": "Clément Pasquier <clement@n00sphere.net>",
