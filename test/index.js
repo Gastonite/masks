@@ -15,19 +15,19 @@ const input = {
 
 const internals = {};
 
-internals.shouldReturn = (input, mask, result, mergeMasks) => {
-  expect(Masks.sanitize(input, mask, {mergeMasks: mergeMasks})).to.equal(result);
+internals.shouldReturn = (input, mask, result, union) => {
+  expect(Masks.sanitize(input, mask, {union})).to.equal(result);
 };
 
-internals.shouldBeEmpty = (input, param, mergeMasks) =>
-  internals.shouldReturn(input, param, {}, mergeMasks);
+internals.shouldBeEmpty = (input, param, union) =>
+  internals.shouldReturn(input, param, {}, union);
 
-internals.shouldBeInput = (input, param, mergeMasks) =>
-  internals.shouldReturn(Hoek.clone(input), param, input, mergeMasks);
+internals.shouldBeInput = (input, param, union) =>
+  internals.shouldReturn(Hoek.clone(input), param, input, union);
 
-internals.shouldThrow = (input, mask, errorMessage, mergeMasks) => {
+internals.shouldThrow = (input, mask, errorMessage, union) => {
   try {
-    expect(Masks.sanitize(input, mask, mergeMasks)).to.not.exist();
+    expect(Masks.sanitize(input, mask, union)).to.not.exist();
   } catch (err) {
     expect(err).to.exist();
     expect(err.message).to.equal(errorMessage);
@@ -36,7 +36,7 @@ internals.shouldThrow = (input, mask, errorMessage, mergeMasks) => {
 
 
 
-describe('Masks.sanitize without mergeMasks options', () => {
+describe('Masks.sanitize without union options', () => {
 
   before((done) => {
 
